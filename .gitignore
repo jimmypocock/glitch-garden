@@ -1,0 +1,13 @@
+*.sln
+*.userprefs
+*.csproj
+*.pidb
+*.unityproj
+.DS_Store
+/obj
+/Temp
+/Builds
+Library/
+build/
+Assets/Downloads/
+Assets/Sounds/
