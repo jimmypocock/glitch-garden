@@ -3,42 +3,60 @@ using System.Collections;
 
 public class SoundManager : MonoBehaviour
 {
-	static SoundManager instance = null;
 
-	public AudioClip splashSound;
-	//	public AudioClip gameClip;
-	//	public AudioClip endClip;
+	public AudioClip[] musicChangeArray;
 
-	private AudioSource music;
+	private AudioSource audioSource;
+
+	void Awake ()
+	{
+		DontDestroyOnLoad (gameObject);
+	}
 
 	void Start ()
 	{
-		if (instance != null && instance != this) {
-			Destroy (gameObject);
-		} else {
-			instance = this;
-			GameObject.DontDestroyOnLoad (gameObject);
-
-			music = GetComponent<AudioSource> ();
-			music.clip = splashSound;
-			music.loop = true;
-			music.Play ();
-		}
-
+		audioSource = GetComponent<AudioSource> ();
+		OnLevelWasLoaded (0);
 	}
 
 	void OnLevelWasLoaded (int level)
 	{
-		music.Stop ();
+		AudioClip currentLevelMusic = musicChangeArray [level];
 
-		if (level == 0) {
-			music.clip = splashSound;
-		} else {
-			music.clip = splashSound;
+		if (currentLevelMusic && currentLevelMusic != audioSource.clip) {
+			audioSource.clip = currentLevelMusic;
+			audioSource.loop = true;
+			audioSource.Play ();
 		}
-		music.loop = true;
-
-		music.Play ();
 	}
+
+
+
+
+	//	static SoundManager instance = null;
+	//
+	//	public AudioClip splashSound;
+	//	//	public AudioClip gameClip;
+	//	//	public AudioClip endClip;
+	//
+	//	private AudioSource music;
+	//
+	//	void Start ()
+	//	{
+	//		if (instance != null && instance != this) {
+	//			Destroy (gameObject);
+	//		} else {
+	//			instance = this;
+	//			GameObject.DontDestroyOnLoad (gameObject);
+	//
+	//			music = GetComponent<AudioSource> ();
+	//			music.clip = splashSound;
+	//			music.loop = true;
+	//			music.Play ();
+	//		}
+	//
+	//	}
+	//
+
 
 }
