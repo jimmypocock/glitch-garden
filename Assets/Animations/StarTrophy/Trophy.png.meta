@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 607b08d4d523d4ca0aef488658c68c2e
+guid: a27d832ccea8b46a99bae2482a9b2746
+timeCreated: 1453765534
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: trophy top
-    21300002: trophy base
+    21300000: trophy_top
+    21300002: trophy_base
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -27,7 +29,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -50,7 +52,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: trophy top
+    - name: trophy_top
       rect:
         serializedVersion: 2
         x: 0
@@ -60,13 +62,19 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: trophy base
+      outline:
+      - - {x: -15.5, y: 41}
+        - {x: -18.5, y: 40}
+        - {x: -18.5, y: 6}
+        - {x: -12.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 18.5, y: 41}
+    - name: trophy_base
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 37
+        width: 38
         height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
